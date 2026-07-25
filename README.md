@@ -53,6 +53,37 @@ For teams who want to go further:
    ```
    (You only need to `clone` once — after that it's `add`, `commit`, and `push` each time you save progress.)
 
+## Working as a Team: Branches
+
+Once more than one person is working in the same repo, everyone pushing straight to `main` gets messy fast. Branches let each person work on their own copy of the project without stepping on anyone else's changes. Here's the flow, left to right:
+
+1. **Branch off** — create your own branch to work in:
+   ```
+   git checkout -b akshar
+   ```
+2. **Do your work** — make your changes, then save them:
+   ```
+   git add .
+   git commit -m "describe what you changed here"
+   ```
+3. **Get the latest** — before you push, pull down the newest changes from `main` so you're building on top of everyone else's work, not around it:
+   ```
+   git pull origin main
+   ```
+4. **Push & merge** — push your branch up to GitHub, then merge it into `main`:
+   ```
+   git push origin akshar
+   ```
+
+### `git fetch` vs. `git pull`
+
+- `git fetch` — look, don't touch. It checks GitHub for new changes and downloads them, but doesn't change any of the files you're working on.
+- `git pull` — fetch **and** merge. It downloads new changes and immediately merges them into the branch you're currently on.
+
+### The golden rule
+
+**Always `pull` before you `push`.** If someone else has changed the project since you last checked, pulling first means you find out (and sort out any conflicts) on your own machine — not in the middle of the group.
+
 ## A note on tools
 
 This project uses **only plain HTML, CSS, and JavaScript** — no frameworks (like React or Vue) and no build step. If you ask an AI tool for help, **tell it that** explicitly, or it will hand you React code that won't run in this project.
