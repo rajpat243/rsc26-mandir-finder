@@ -1,57 +1,69 @@
-# Mandir Finder
+# Mandir Guesser
 
-A website that helps someone find a nearby BAPS mandir, along with its address and sabha (gathering) times.
+> **Heads up:** the project idea for this repo has changed since you first cloned it. It used to be a mandir finder/directory — it is now a picture guessing game. Please re-read this whole README, even if you already looked at it before.
+
+A picture guessing game for the gala dinner.
 
 ## What you are building
 
-A page where a visitor picks a city or state and sees which mandir is closest, its address, and when its sabha happens. Think of it as a simple directory that saves people from having to ask around or search the internet themselves.
+A game that shows a photo of a BAPS mandir or a murti and asks the player to pick which one it is from four options. It's meant to be fast-paced and fun for other delegates to play at the gala dinner, testing how well they know BAPS mandirs and murtis.
 
-## Your MVP (smallest working version)
+## Your MVP (smallest version that actually works)
 
 Get this working first, before anything else:
 
-- A way to pick a city or state (a dropdown works great for this).
-- When one is picked, show the mandir's name, its address, and its sabha time.
+- Show an image (a mandir or murti photo).
+- Show four answer choices.
+- When the player picks one, tell them right away if it's right or wrong.
+- Keep a running score.
 
-That's it. If someone can pick a place and see mandir info, your MVP is done.
+That's it. If a player can see a photo, guess, and get a score, your MVP is done.
 
 ## Stretch goals
 
 Once your MVP works, try adding:
 
-- A search box so people can type instead of scrolling a dropdown.
-- Info cards instead of a plain list — a nicer box for each mandir with its details laid out clearly.
+- A streak counter for consecutive correct answers.
+- A short fact about the mandir or murti shown after each answer.
+- Separate difficulty levels — famous mandirs versus lesser-known ones.
 
 ## Challenge goals
 
-For teams who want to go further:
+For teams who want to go further, pick one:
 
-- A map link or embedded map showing where the mandir is.
-- Photos of the mandir.
+- A timer that adds pressure to each guess.
+- **OR** zoomed-in detail shots that only reveal the full photo after the player has guessed.
+
+## Important: how to handle images
+
+- Store all images in an `images` folder inside this repo — don't scatter them around.
+- Keep image files small (resize/compress them) so the page loads fast, especially on a phone at the gala.
+- File names are **case sensitive** once this is published online — `Photo.jpg` and `photo.jpg` are treated as two completely different files, so match your file names and your code exactly, including capitalization.
+- Only use official BAPS photos or photos your team took yourselves. Do not use copyrighted images pulled from random websites.
 
 ## Team roles
 
-- **Content** — Collects accurate mandir names, addresses, and sabha times for each city or state.
-- **Design** — Decides how the mandir info is displayed: the dropdown or search box, the info cards, spacing and colors.
-- **Code** — Builds the logic that connects the city/state picker to the right mandir's information.
-- **Media** — Finds mandir photos and, for the challenge goal, sets up map links or embeds.
+- **Content** — Picks which mandirs and murtis to include, writes the four answer choices for each, and (for the stretch goal) writes the facts shown after each answer.
+- **Design** — Decides how the photo, answer choices, and score are laid out and styled.
+- **Code** — Builds the logic that shows a photo, checks the picked answer, and keeps score.
+- **Media** — Sources or takes the mandir/murti photos, resizes them, and organizes them in the `images` folder (see note above).
 
 ## Getting started
 
-1. Clone this repo to your computer:
+1. Pull the latest changes so you're starting from the newest version of the project:
    ```
-   git clone <this repo's URL>
+   git pull
    ```
-2. Open the `index.html` file in your web browser (just double-click it, or drag it into a browser window) to see the starter page.
+2. Open the `index.html` file in your web browser (double-click it, or drag it into a browser window) to see the current page.
 3. Make your changes to `index.html`, `style.css`, and `script.js`.
-4. Save your work with git, using these four commands as you go:
+4. Save your work with git as you go, using these four commands:
    ```
-   git clone <this repo's URL>
    git add .
    git commit -m "describe what you changed here"
    git push
+   git pull
    ```
-   (You only need to `clone` once — after that it's `add`, `commit`, and `push` each time you save progress.)
+   Run all four every time you save progress — `pull` again at the end so you're never behind if a teammate pushed while you were working.
 
 ## Working as a Team: Branches
 
