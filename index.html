@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mandir Finder</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandir Guesser</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Mandir Finder</h1>
-  <p>This is a starter page. Your team will replace this with the real thing.</p>
+
+  <header>
+    <h1>🛕 Mandir Guesser</h1>
+    <p>Guess the BAPS mandir before time runs out</p>
+  </header>
+
+  <main>
+    <div class="status-bar">
+      <div>Score: <span id="scoreDisplay">0</span></div>
+      <div>Round: <span id="roundDisplay">1</span> / <span id="totalRounds">5</span></div>
+      <div>Time: <span id="timerDisplay">10</span>s</div>
+    </div>
+
+    <div class="timer-track">
+      <div class="timer-fill" id="timerFill"></div>
+    </div>
+
+    <div class="clue-card">
+      <h2>Which mandir is this?</h2>
+
+      <!-- Add an image path in ROUNDS (in data.js) and it will show here automatically -->
+      <img class="clue-image" id="clueImage" src="" alt="Mandir clue">
+
+      <p class="clue-text" id="clueText">Loading clue...</p>
+    </div>
+
+    <p class="feedback" id="feedback"></p>
+
+    <div class="options" id="optionsContainer">
+      <button class="option-btn" data-index="0"></button>
+      <button class="option-btn" data-index="1"></button>
+      <button class="option-btn" data-index="2"></button>
+      <button class="option-btn" data-index="3"></button>
+    </div>
+
+    <div class="controls">
+      <button class="btn btn-secondary" id="hintBtn">Show Hint</button>
+      <button class="btn btn-primary" id="nextBtn">Next Round</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mandir Guesser. Built for fun and learning.</p>
+  </footer>
+
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

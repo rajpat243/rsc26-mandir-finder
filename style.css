@@ -1,7 +1,248 @@
-/* This is where your team writes your styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  line-height: 1.5;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #eaf6ff 0%, #ffffff 60%);
+  color: #1c3b4a;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(120deg, #3aa0d1, #63c2e8);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(58, 160, 209, 0.25);
+}
+
+header h1 {
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-top: 0.25rem;
+}
+
+main {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #cdeaf9;
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.status-bar span {
+  font-weight: bold;
+  color: #3aa0d1;
+}
+
+#timerDisplay {
+  color: #1c3b4a;
+  transition: color 0.2s ease;
+}
+
+#timerDisplay.time-low {
+  color: #e05353;
+}
+
+.timer-track {
+  width: 100%;
+  height: 10px;
+  background-color: #dff1fb;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.timer-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #3aa0d1, #63c2e8);
+  border-radius: 6px;
+  transition: width 1s linear, background 0.3s ease;
+}
+
+.timer-fill.time-low {
+  background: linear-gradient(90deg, #e05353, #ff8a80);
+}
+
+.clue-card {
+  background-color: #fff;
+  border: 1px solid #cdeaf9;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(58, 160, 209, 0.1);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.35s ease;
+}
+
+.clue-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #3aa0d1;
+}
+
+.clue-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 0 auto 1rem auto;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.clue-text {
+  font-size: 1.05rem;
+  color: #444;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.feedback {
+  min-height: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.feedback.correct-text {
+  color: #2e7d32;
+}
+
+.feedback.incorrect-text {
+  color: #c62828;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.option-btn {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #3aa0d1;
+  background-color: #fff;
+  color: #3aa0d1;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.option-btn:hover:not(:disabled) {
+  background-color: #eaf6ff;
+  box-shadow: 0 3px 8px rgba(58, 160, 209, 0.2);
+}
+
+.option-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.option-btn.correct {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+}
+
+.option-btn.incorrect {
+  background-color: #e57373;
+  border-color: #e57373;
+  color: #fff;
+}
+
+.option-btn:disabled {
+  cursor: default;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  box-shadow: 0 3px 10px rgba(58, 160, 209, 0.25);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: #3aa0d1;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #2f8ab8;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #3aa0d1;
+  border: 2px solid #3aa0d1;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #eaf6ff;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #3aa0d1;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
